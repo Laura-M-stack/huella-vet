@@ -1,0 +1,120 @@
+/* Huella Vet: tokens de diseno.
+   Acento: terracota quemado (#b4501e). Neutros calidos y tinta azul pizarra.
+   Pares de texto verificados con contraste AA (4.5:1 texto, 3:1 componentes). */
+:root {
+  color-scheme: light;
+
+  --paper: #fbf7f1;
+  --surface: #ffffff;
+  --surface-2: #f4eee5;
+  --ink: #1f2a37;
+  --ink-soft: #4b5868;
+  --line: #e6dfd3;
+  --line-strong: #8a8174;
+
+  --accent: #b4501e;
+  --accent-hover: #9c4318;
+  --on-accent: #ffffff;
+  --accent-soft: #f8e5d8;
+  --accent-ink: #8f3b12;
+
+  --ok-bg: #e1f2ea;
+  --ok-fg: #1f6f54;
+  --warn-bg: #fcefc9;
+  --warn-fg: #7a4f00;
+  --danger-bg: #fbe1e0;
+  --danger-fg: #a12a2a;
+  --info-bg: #e0eaf8;
+  --info-fg: #1f4e8c;
+  --neutral-bg: #ece6dc;
+  --neutral-fg: #4b5868;
+
+  --focus: #1f2a37;
+
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Figtree', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-pill: 999px;
+
+  --shadow: 0 1px 2px rgba(31, 42, 55, 0.06), 0 6px 20px rgba(31, 42, 55, 0.05);
+  --shadow-lg: 0 20px 50px rgba(31, 42, 55, 0.18);
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+}
+
+:root[data-tema='oscuro'] {
+  color-scheme: dark;
+  --paper: #14181f;
+  --surface: #1c222b;
+  --surface-2: #232b36;
+  --ink: #ede8df;
+  --ink-soft: #aab3c0;
+  --line: #2d3541;
+  --line-strong: #7b8594;
+
+  --accent: #e07b45;
+  --accent-hover: #ea8d5b;
+  --on-accent: #1a1208;
+  --accent-soft: #3a2518;
+  --accent-ink: #f0a47c;
+
+  --ok-bg: #14332a;
+  --ok-fg: #7fd1b0;
+  --warn-bg: #3a2b07;
+  --warn-fg: #f0c365;
+  --danger-bg: #3f1717;
+  --danger-fg: #f29a98;
+  --info-bg: #14283f;
+  --info-fg: #8db8f0;
+  --neutral-bg: #2a323d;
+  --neutral-fg: #aab3c0;
+
+  --focus: #ede8df;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) {
+    color-scheme: dark;
+    --paper: #14181f;
+    --surface: #1c222b;
+    --surface-2: #232b36;
+    --ink: #ede8df;
+    --ink-soft: #aab3c0;
+    --line: #2d3541;
+    --line-strong: #7b8594;
+
+    --accent: #e07b45;
+    --accent-hover: #ea8d5b;
+    --on-accent: #1a1208;
+    --accent-soft: #3a2518;
+    --accent-ink: #f0a47c;
+
+    --ok-bg: #14332a;
+    --ok-fg: #7fd1b0;
+    --warn-bg: #3a2b07;
+    --warn-fg: #f0c365;
+    --danger-bg: #3f1717;
+    --danger-fg: #f29a98;
+    --info-bg: #14283f;
+    --info-fg: #8db8f0;
+    --neutral-bg: #2a323d;
+    --neutral-fg: #aab3c0;
+
+    --focus: #ede8df;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+  }
+}
