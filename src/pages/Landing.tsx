@@ -1,5 +1,6 @@
 import { Icon } from '../components/Icon.tsx';
 import type { IconName } from '../components/Icon.tsx';
+import { ToggleTema } from '../components/AppShell.tsx';
 import { PawMark } from '../components/Logo.tsx';
 import { rutas } from '../router.ts';
 
@@ -14,6 +15,35 @@ const MODULOS: Array<{ icono: IconName; titulo: string; texto: string }> = [
   { icono: 'box', titulo: 'Insumos', texto: 'Stock con mínimos y vencimientos, y alertas antes de quedarte sin algo importante.' },
 ];
 
+/** Rastro de huellas decorativo para el fondo del hero (porcentajes dentro del hero). */
+const RASTRO = [
+  { x: 3, y: 90, r: -28, s: 56, d: true },
+  { x: 14, y: 76, r: -14, s: 48, d: true },
+  { x: 30, y: 92, r: -30, s: 52, d: true },
+  { x: 47, y: 78, r: -16, s: 60, d: true },
+  { x: 60, y: 90, r: -26, s: 64, d: false },
+  { x: 74, y: 8, r: 18, s: 60, d: false },
+  { x: 88, y: 20, r: 28, s: 56, d: true },
+  { x: 92, y: 88, r: -20, s: 64, d: false },
+  { x: 5, y: 6, r: 20, s: 52, d: true },
+];
+
+function Huellas() {
+  return (
+    <div className="l-hero__paws" aria-hidden="true">
+      {RASTRO.map((h, i) => (
+        <span
+          key={i}
+          className={h.d ? 'l-hero__paw is-desktop' : 'l-hero__paw'}
+          style={{ left: `${h.x}%`, top: `${h.y}%`, transform: `rotate(${h.r}deg)` }}
+        >
+          <PawMark size={h.s} />
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function Landing() {
   return (
     <div className="landing">
@@ -25,14 +55,18 @@ export function Landing() {
           <span className="brand__mark"><PawMark size={26} /></span>
           <span className="brand__name">Huella Vet</span>
         </a>
-        <nav aria-label="Principal" className="l-nav">
-          <a href="#modulos">Qué incluye</a>
-          <a href="#a-medida">A medida</a>
-        </nav>
+        <div className="l-header__right">
+          <nav aria-label="Principal" className="l-nav">
+            <a href="#modulos">Qué incluye</a>
+            <a href="#a-medida">A medida</a>
+          </nav>
+          <ToggleTema />
+        </div>
       </header>
 
       <main id="contenido">
         <section className="l-hero">
+          <Huellas />
           <div className="l-hero__text">
             <p className="eyebrow">Demo de software de gestión para tu negocio</p>
             <h1 className="l-hero__title">La clínica en orden, sin planillas ni papeles.</h1>

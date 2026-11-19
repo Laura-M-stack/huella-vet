@@ -1,4 +1,5 @@
 .landing {
+  overflow-x: clip;
   min-height: 100dvh;
 }
 
@@ -24,6 +25,11 @@
   justify-content: space-between;
   gap: var(--space-4);
   padding: var(--space-4) 0;
+}
+.l-header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 .l-nav {
   display: flex;
@@ -55,6 +61,8 @@
 }
 
 .l-hero {
+  position: relative;
+  isolation: isolate;
   display: grid;
   gap: var(--space-6);
   align-items: center;
@@ -252,4 +260,34 @@
   .l-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+/* Huellas de fondo: decorativas, suaves y sin interferir con el texto */
+.l-hero__paws {
+  position: absolute;
+  inset: -40px 0;
+  z-index: -1;
+  overflow: hidden;
+  color: var(--accent);
+  pointer-events: none;
+}
+.l-hero__paw {
+  position: absolute;
+  opacity: 0.13;
+}
+@media (max-width: 959px) {
+  .l-hero__paw.is-desktop {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .l-nav {
+    display: none;
+  }
+}
+.brand__name {
+  white-space: nowrap;
+}
+.l-nav a {
+  white-space: nowrap;
 }

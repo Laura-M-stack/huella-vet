@@ -46,7 +46,7 @@ export function aplicarTemaGuardado(): void {
   else document.documentElement.setAttribute('data-tema', t);
 }
 
-function ToggleTema() {
+export function ToggleTema() {
   const [tema, setTema] = useState<Tema>(leerTema);
   const oscuroEfectivo =
     tema === 'oscuro' || (tema === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);

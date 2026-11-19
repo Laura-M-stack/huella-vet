@@ -14,6 +14,8 @@ export type Route =
 export function parseHash(hash: string): Route {
   const path = hash.replace(/^#/, '').replace(/\/+$/, '') || '/';
   if (path === '/') return { name: 'landing' };
+  // Un hash sin barra (#a-medida) es un ancla dentro de la landing, no una ruta.
+  if (!path.startsWith('/')) return { name: 'landing' };
   const partes = path.split('/').filter(Boolean);
   if (partes[0] !== 'app') return { name: 'noEncontrada' };
   switch (partes[1]) {

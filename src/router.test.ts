@@ -25,3 +25,9 @@ test('los ids con caracteres raros ida y vuelta', () => {
   const id = 'tn-a/b c';
   assert.deepEqual(parseHash(rutas.paciente(id)), { name: 'paciente', id });
 });
+
+test('un ancla sin barra (#a-medida) queda en la landing', () => {
+  assert.deepEqual(parseHash('#a-medida'), { name: 'landing' });
+  assert.deepEqual(parseHash('#modulos'), { name: 'landing' });
+  assert.deepEqual(parseHash('#/a-medida'), { name: 'noEncontrada' });
+});
